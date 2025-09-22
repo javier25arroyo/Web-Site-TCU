@@ -97,7 +97,7 @@ Web-Site-TCU/
 ### Deploy to Netlify
 
 #### Option 1: Git-based deployment (Recommended)
-1. Push your code to GitHub/GitLab/Bitbucket
+1. Push your code to GitHub
 2. Log in to [Netlify](https://app.netlify.com/)
 3. Click "New site from Git"
 4. Connect your repository
