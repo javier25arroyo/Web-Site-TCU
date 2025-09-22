@@ -1,0 +1,331 @@
+---
+// Wireframe - Página Acerca de
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Acerca de - Iglesia Nuestra Señora de Los Ángeles</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.1);
+        }
+        .hero-about {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/church-interior.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        .mission-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .mission-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .mission-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-left: 20px solid #e74c3c;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+        .pastor-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .pastor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .pastor-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .pastor-photo {
+            width: 120px;
+            height: 120px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .stats-section {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mission-grid, .pastor-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-item::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h2>🏛️ Nuestra Señora de Los Ángeles</h2>
+            </div>
+            <div class="nav-links">
+                <a href="/wireframe-home">Inicio</a>
+                <a href="/wireframe-about" class="active">Acerca de</a>
+                <a href="/wireframe-services">Servicios</a>
+                <a href="/wireframe-events">Eventos</a>
+                <a href="/wireframe-gallery">Galería</a>
+                <a href="/wireframe-contact">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero About -->
+    <section class="hero-about">
+        <div>
+            <h1>Nuestra Historia</h1>
+            <p>Más de 50 años sirviendo a la comunidad costarricense</p>
+        </div>
+    </section>
+
+    <!-- Nuestra Misión -->
+    <section class="section">
+        <h2>Nuestra Misión</h2>
+        <div class="mission-section">
+            <p style="font-size: 1.2rem; text-align: center; margin-bottom: 2rem;">
+                Ser una comunidad cristiana que vive el amor de Cristo, fortaleciendo la fe,
+                promoviendo la solidaridad y contribuyendo al desarrollo integral de las familias
+                costarricenses a través del servicio, la educación y la evangelización.
+            </p>
+            <div class="mission-grid">
+                <div class="mission-item">
+                    <h3>🙏 Fe y Espiritualidad</h3>
+                    <p>Fortalecer la relación con Dios a través de la oración y los sacramentos.</p>
+                </div>
+                <div class="mission-item">
+                    <h3>🤝 Servicio Comunitario</h3>
+                    <p>Atender las necesidades de los más vulnerables de nuestra sociedad.</p>
+                </div>
+                <div class="mission-item">
+                    <h3>📚 Educación y Formación</h3>
+                    <p>Formar integralmente a niños, jóvenes y adultos en valores cristianos.</p>
+                </div>
+                <div class="mission-item">
+                    <h3>🌱 Desarrollo Humano</h3>
+                    <p>Promover el crecimiento personal y familiar en armonía con la naturaleza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea del Tiempo -->
+    <section class="section">
+        <h2>Nuestra Historia</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>1975 - Fundación</h3>
+                <p>Se establece la parroquia Nuestra Señora de Los Ángeles en el corazón de Costa Rica.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>1990 - Expansión</h3>
+                <p>Construcción del templo actual y desarrollo de programas comunitarios.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2005 - Centro Educativo</h3>
+                <p>Fundación de la escuela parroquial y programas de catequesis.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2020 - Ministerio Digital</h3>
+                <p>Adaptación a la era digital con transmisiones en vivo y redes sociales.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2025 - Futuro</h3>
+                <p>Continuamos sirviendo a la comunidad con innovación y fe renovada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo Pastoral -->
+    <section class="section">
+        <h2>Nuestro Equipo Pastoral</h2>
+        <div class="pastor-section">
+            <div class="pastor-grid">
+                <div class="pastor-card">
+                    <div class="pastor-photo">👨‍⚕️</div>
+                    <h3>Párroco Juan Pérez</h3>
+                    <p>Párroco Principal</p>
+                    <p>Licenciado en Teología Pastoral, 15 años de servicio.</p>
+                </div>
+                <div class="pastor-card">
+                    <div class="pastor-photo">👩‍⚕️</div>
+                    <h3>Maria González</h3>
+                    <p>Directora de Catequesis</p>
+                    <p>Especialista en educación religiosa infantil.</p>
+                </div>
+                <div class="pastor-card">
+                    <div class="pastor-photo">👨‍🏫</div>
+                    <h3>Carlos Rodríguez</h3>
+                    <p>Coordinador Juvenil</p>
+                    <p>Líder de grupos juveniles y música litúrgica.</p>
+                </div>
+                <div class="pastor-card">
+                    <div class="pastor-photo">👩‍💼</div>
+                    <h3>Ana López</h3>
+                    <p>Administradora</p>
+                    <p>Gestión administrativa y programas sociales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="section">
+        <div class="stats-section">
+            <h2>Nuestra Comunidad en Números</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>2,500+</h3>
+                    <p>Feligreses Activos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Años de Servicio</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>Grupos Parroquiales</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Familias Atendidas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Iglesia Nuestra Señora de Los Ángeles - Costa Rica</p>
+        <p>📍 Dirección | 📞 Teléfono | ✉️ Email</p>
+    </footer>
+</body>
+</html>

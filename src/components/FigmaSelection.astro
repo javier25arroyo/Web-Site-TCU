@@ -1,0 +1,38 @@
+---
+/*
+  Componente base para pegar código exportado desde Figma Dev Mode.
+  - Pega el HTML dentro del slot o reemplaza el markup del componente.
+  - Puedes mover estilos a <style> o usar CSS Modules/Scoped.
+*/
+const { class: className = '' } = Astro.props as { class?: string };
+---
+
+<div class={`figma-selection ${className}`}>
+  <!-- Pega aquí el markup proveniente de Figma Dev Mode -->
+  <slot />
+</div>
+
+<style>
+  /* Estilos de scaffolding: ajuste y aislamiento visual */
+  .figma-selection {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px dashed var(--astro-code-foreground, #999);
+    border-radius: 8px;
+    padding: 16px;
+    background: color-mix(in oklab, Canvas, CanvasText 2%);
+  }
+
+  /* Ejemplo: normalizar tipografía si Figma exporta tamaños absolutos */
+  .figma-selection :is(h1,h2,h3,h4,h5,h6) {
+    line-height: 1.2;
+    margin: 0.5em 0;
+  }
+
+  .figma-selection p { margin: 0.5em 0; }
+
+  /* Utilidades opcionales para depurar layout */
+  .debug-outline * { outline: 1px solid rgba(0,0,0,.05); }
+</style>

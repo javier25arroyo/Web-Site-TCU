@@ -1,0 +1,519 @@
+---
+// Wireframe - Donaciones
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Donaciones - Iglesia Nuestra Señora de Los Ángeles</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.1);
+        }
+        .hero-donations {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/helping-hands.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        .impact-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .impact-item {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .impact-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .impact-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+        .donation-options {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .option-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .option-card:hover {
+            border-color: #e74c3c;
+            transform: translateY(-5px);
+        }
+        .option-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .option-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .amount-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        .amount-btn {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .amount-btn:hover, .amount-btn.active {
+            background: #e74c3c;
+            color: white;
+            border-color: #e74c3c;
+        }
+        .custom-amount {
+            margin: 1rem 0;
+        }
+        .custom-amount input {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 150px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .payment-methods {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .method-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        .method-item h3 {
+            margin-bottom: 1rem;
+        }
+        .recurring-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .recurring-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .recurring-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .recurring-card:hover, .recurring-card.active {
+            border-color: #3498db;
+            background: #e8f4fd;
+        }
+        .other-ways {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .ways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .way-item {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .way-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            background: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 0.5rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background: #c0392b;
+        }
+        .btn-secondary {
+            background: #3498db;
+        }
+        .btn-secondary:hover {
+            background: #2980b9;
+        }
+        .btn-success {
+            background: #27ae60;
+        }
+        .btn-success:hover {
+            background: #229954;
+        }
+        .thank-you {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .impact-grid, .options-grid, .methods-grid, .recurring-options, .ways-grid {
+                grid-template-columns: 1fr;
+            }
+            .amount-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h2>🏛️ Nuestra Señora de Los Ángeles</h2>
+            </div>
+            <div class="nav-links">
+                <a href="/wireframe-home">Inicio</a>
+                <a href="/wireframe-about">Acerca de</a>
+                <a href="/wireframe-services">Servicios</a>
+                <a href="/wireframe-events">Eventos</a>
+                <a href="/wireframe-gallery">Galería</a>
+                <a href="/wireframe-contact">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Donations -->
+    <section class="hero-donations">
+        <div>
+            <h1>Tu Generosidad Hace la Diferencia</h1>
+            <p>Únete a nosotros en nuestra misión de servir a la comunidad costarricense</p>
+        </div>
+    </section>
+
+    <!-- Impacto de las Donaciones -->
+    <section class="section">
+        <h2>💝 Tu Donación Hace la Diferencia</h2>
+        <div class="impact-section">
+            <p>Gracias a la generosidad de personas como tú, podemos continuar sirviendo a nuestra comunidad.</p>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-number">500+</div>
+                    <h3>Familias Ayudadas</h3>
+                    <p>Apoyo alimentario y material para familias necesitadas.</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">200</div>
+                    <h3>Niños Atendidos</h3>
+                    <p>Programas educativos y catequéticos para niños.</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">50</div>
+                    <h3>Voluntarios Activos</h3>
+                    <p>Personas dedicadas al servicio comunitario.</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">10</div>
+                    <h3>Proyectos Sociales</h3>
+                    <p>Iniciativas de desarrollo comunitario en marcha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opciones de Donación -->
+    <section class="section">
+        <h2>🎁 Elige tu Forma de Contribuir</h2>
+        <div class="donation-options">
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-icon">💰</div>
+                    <h3>Donación Única</h3>
+                    <p>Una contribución puntual para apoyar nuestros proyectos.</p>
+                    <div class="amount-buttons">
+                        <button class="amount-btn">₡5,000</button>
+                        <button class="amount-btn">₡10,000</button>
+                        <button class="amount-btn">₡25,000</button>
+                        <button class="amount-btn">₡50,000</button>
+                    </div>
+                    <div class="custom-amount">
+                        <input type="number" placeholder="Otro monto" min="1000">
+                    </div>
+                    <button class="btn">Donar Ahora</button>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">🔄</div>
+                    <h3>Donación Mensual</h3>
+                    <p>Apoyo continuo que nos permite planificar mejor nuestros servicios.</p>
+                    <div class="amount-buttons">
+                        <button class="amount-btn">₡2,000/mes</button>
+                        <button class="amount-btn">₡5,000/mes</button>
+                        <button class="amount-btn">₡10,000/mes</button>
+                    </div>
+                    <div class="custom-amount">
+                        <input type="number" placeholder="Otro monto" min="1000">
+                    </div>
+                    <button class="btn btn-secondary">Suscribirse</button>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">🎯</div>
+                    <h3>Donación Específica</h3>
+                    <p>Destina tu donación a un proyecto específico de tu interés.</p>
+                    <p>Proyectos disponibles:</p>
+                    <ul style="text-align: left; margin: 1rem 0;">
+                        <li>Programa de alimentación infantil</li>
+                        <li>Becas escolares</li>
+                        <li>Mantenimiento del templo</li>
+                        <li>Centro comunitario</li>
+                    </ul>
+                    <button class="btn btn-success">Ver Proyectos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Métodos de Pago -->
+    <section class="section">
+        <div class="payment-methods">
+            <h2>💳 Métodos de Pago Seguros</h2>
+            <div class="methods-grid">
+                <div class="method-item">
+                    <h3>💳 Tarjeta de Crédito</h3>
+                    <p>Visa, Mastercard, American Express</p>
+                    <p>Procesamiento seguro y confiable</p>
+                </div>
+                <div class="method-item">
+                    <h3>🏦 Transferencia Bancaria</h3>
+                    <p>Depósito directo a cuenta parroquial</p>
+                    <p>SINUS: CR12345678901234567890</p>
+                </div>
+                <div class="method-item">
+                    <h3>📱 Sinpe Móvil</h3>
+                    <p>Transferencia inmediata</p>
+                    <p>Número: +506 8888-9999</p>
+                </div>
+                <div class="method-item">
+                    <h3>💵 Efectivo</h3>
+                    <p>En la oficina parroquial</p>
+                    <p>Lunes a viernes, 8 AM - 4 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donaciones Recurrentes -->
+    <section class="section">
+        <h2>🔄 Donaciones Recurrentes</h2>
+        <div class="recurring-section">
+            <p>Configura donaciones automáticas para apoyar nuestros programas de manera continua.</p>
+            <div class="recurring-options">
+                <div class="recurring-card">
+                    <h3>📅 Mensual</h3>
+                    <p>Donación automática cada mes</p>
+                    <p>Ideal para apoyo sostenido</p>
+                </div>
+                <div class="recurring-card">
+                    <h3>📆 Trimestral</h3>
+                    <p>Cada 3 meses</p>
+                    <p>Para donantes con presupuesto trimestral</p>
+                </div>
+                <div class="recurring-card">
+                    <h3>📊 Anual</h3>
+                    <p>Una vez al año</p>
+                    <p>Planificación anual de donaciones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Otras Formas de Ayudar -->
+    <section class="section">
+        <h2>🤝 Otras Formas de Contribuir</h2>
+        <div class="other-ways">
+            <div class="ways-grid">
+                <div class="way-item">
+                    <h3>⏰ Tiempo y Talento</h3>
+                    <p>Únete como voluntario en nuestros programas comunitarios.</p>
+                    <a href="#contacto" class="btn btn-secondary">Ser Voluntario</a>
+                </div>
+                <div class="way-item">
+                    <h3>🎁 Donación en Especie</h3>
+                    <p>Alimentos, ropa, útiles escolares y otros artículos necesarios.</p>
+                    <a href="#contacto" class="btn btn-secondary">Ver Lista</a>
+                </div>
+                <div class="way-item">
+                    <h3>📢 Difusión</h3>
+                    <p>Comparte nuestra labor en redes sociales y con tu comunidad.</p>
+                    <a href="#contacto" class="btn btn-secondary">Compartir</a>
+                </div>
+                <div class="way-item">
+                    <h3>🛠️ Habilidades Profesionales</h3>
+                    <p>Ofrece tus conocimientos profesionales para proyectos específicos.</p>
+                    <a href="#contacto" class="btn btn-secondary">Ofrecer Ayuda</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section">
+        <div class="thank-you">
+            <h2>🙏 Gracias por tu Generosidad</h2>
+            <p>"Tu donación no solo ayuda a nuestra iglesia, sino que transforma vidas en nuestra comunidad. Que Dios te bendiga abundantemente."</p>
+            <p><em>- Párroco Juan Pérez</em></p>
+        </div>
+    </section>
+
+    <!-- Información Fiscal -->
+    <section class="section">
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h2>📋 Información para Donantes</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <h3>🧾 Recibo de Donación</h3>
+                    <p>Proporcionamos recibos oficiales para fines fiscales.</p>
+                    <p>Todas las donaciones son deducibles de impuestos según la legislación costarricense.</p>
+                </div>
+                <div>
+                    <h3>🔒 Seguridad</h3>
+                    <p>Tus datos personales y financieros están protegidos.</p>
+                    <p>Utilizamos encriptación SSL y cumplimos con las normativas de protección de datos.</p>
+                </div>
+                <div>
+                    <h3>📞 Soporte</h3>
+                    <p>¿Preguntas sobre donaciones?</p>
+                    <p>Contacta a nuestra oficina administrativa al (506) 2222-3333.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Iglesia Nuestra Señora de Los Ángeles - Costa Rica</p>
+        <p>Tu generosidad hace posible nuestro servicio a la comunidad</p>
+    </footer>
+</body>
+</html>
