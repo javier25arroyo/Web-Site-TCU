@@ -1,16 +1,16 @@
 # Web Site TCU
 
-A modern web application built with Astro framework, optimized for performance and ready for deployment on Netlify or Vercel.
+A modern web application built with Astro framework, optimized for performance.
 
 ## 📋 Prerequisites
 
 ### Node.js Version Requirements
 
-⚠️ **Important:** This project requires **Node.js version 20.12.0 or higher** and **npm version 10.0.0 or higher**.
+⚠️ **Important:** This project requires **Node.js version 20.18.0 or higher** and **npm version 10.0.0 or higher**.
 
 #### Verify your Node.js version:
 ```bash
-node --version  # Should output v20.12.0 or higher
+node --version  # Should output v20.18.0 or higher
 npm --version   # Should output 10.0.0 or higher
 ```
 
@@ -19,12 +19,12 @@ npm --version   # Should output 10.0.0 or higher
 **Option 1: Using NVM (Node Version Manager) - Recommended**
 ```bash
 # For Unix/macOS:
-nvm install 20.12.2
-nvm use 20.12.2
+nvm install 20.18.0
+nvm use 20.18.0
 
 # For Windows (using nvm-windows):
-nvm install 20.12.2
-nvm use 20.12.2
+nvm install 20.18.0
+nvm use 20.18.0
 ```
 
 **Option 2: Direct Download**
@@ -72,8 +72,7 @@ npm run preview
 ```text
 Web-Site-TCU/
 ├── .nvmrc              # Node version specification for NVM
-├── netlify.toml        # Netlify deployment configuration
-├── vercel.json         # Vercel deployment configuration
+
 ├── package.json        # Project dependencies and scripts
 ├── astro.config.mjs    # Astro configuration
 ├── dist/               # Production build output (generated)
@@ -92,48 +91,7 @@ Web-Site-TCU/
 └── README.md           # This file
 ```
 
-## 🚢 Deployment
 
-### Deploy to Netlify
-
-#### Option 1: Git-based deployment (Recommended)
-1. Push your code to GitHub
-2. Log in to [Netlify](https://app.netlify.com/)
-3. Click "New site from Git"
-4. Connect your repository
-5. Deploy settings are pre-configured in `netlify.toml`
-6. Click "Deploy site"
-
-#### Option 2: Manual deployment
-```bash
-# Build the project
-npm run build
-
-# Install Netlify CLI
-npm install -g netlify-cli
-
-# Deploy to Netlify
-netlify deploy --dir=dist --prod
-```
-
-### Deploy to Vercel
-
-#### Option 1: Git-based deployment (Recommended)
-1. Push your code to GitHub/GitLab/Bitbucket
-2. Log in to [Vercel](https://vercel.com/)
-3. Click "New Project"
-4. Import your repository
-5. Deploy settings are pre-configured in `vercel.json`
-6. Click "Deploy"
-
-#### Option 2: CLI deployment
-```bash
-# Install Vercel CLI
-npm install -g vercel
-
-# Deploy to Vercel
-vercel --prod
-```
 
 ## 🛠️ Available Scripts
 
@@ -150,18 +108,7 @@ vercel --prod
 ### `.nvmrc`
 Specifies Node.js version for NVM users. Run `nvm use` to switch to the correct version.
 
-### `netlify.toml`
-Contains Netlify deployment configuration:
-- Build command and publish directory
-- Node.js version specification
-- Redirect rules
-- Security headers
 
-### `vercel.json`
-Contains Vercel deployment configuration:
-- Build settings
-- Rewrite rules
-- Cache and security headers
 
 ### `package.json`
 Includes `engines` field specifying required Node.js and npm versions.
@@ -192,7 +139,7 @@ npm install
 node --version
 
 # Switch using NVM
-nvm use 20.12.2
+nvm use 20.18.0
 ```
 
 **Issue: Build fails on deployment**
@@ -203,8 +150,7 @@ nvm use 20.12.2
 ## 📚 Resources
 
 - [Astro Documentation](https://docs.astro.build/)
-- [Netlify Documentation](https://docs.netlify.com/)
-- [Vercel Documentation](https://vercel.com/docs)
+
 - [Node.js Documentation](https://nodejs.org/docs/)
 
 ## 📄 License
