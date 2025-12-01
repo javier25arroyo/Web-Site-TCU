@@ -1,0 +1,95 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+interface ArchitectureCard {
+	title: string;
+	description: string;
+	highlight: string;
+	image: string;
+}
+
+const architectureFeatures: ArchitectureCard[] = [
+	{
+		title: 'Fachada Principal',
+		description: 'La imponente fachada de estilo bizantino recibe a los visitantes con sus arcos ornamentados y detalles en piedra que reflejan la devoción de generaciones de costarricenses.',
+		highlight: 'Estilo bizantino único en Centroamérica',
+		image: '/assets/fachada.jpg'
+	},
+	{
+		title: 'Cúpula Central',
+		description: 'La majestuosa cúpula se eleva sobre el altar principal, decorada con frescos que representan escenas celestiales y bañada por la luz natural que entra por sus ventanales.',
+		highlight: 'Frescos originales restaurados',
+		image: '/assets/cupula.webp'
+	},
+	{
+		title: 'Vista Superior',
+		description: 'Desde las alturas se aprecia la magnificencia de la construcción, con sus múltiples cúpulas y la disposición simétrica que caracteriza el estilo bizantino de la Basílica.',
+		highlight: 'Más de 20 vitrales históricos',
+		image: '/assets/vista-arriba.webp'
+	},
+	{
+		title: 'Altar Mayor',
+		description: 'El altar mayor alberga la imagen de la Virgen de los Ángeles, elaborado con maderas preciosas y detalles en pan de oro que resaltan su carácter sagrado.',
+		highlight: 'Hogar de La Negrita',
+		image: '/assets/santos.jpg'
+	},
+	{
+		title: 'Interior del Templo',
+		description: 'El interior revela la riqueza artística de la Basílica, con columnas ornamentadas y espacios diseñados para la contemplación y la oración.',
+		highlight: 'Arquitectura colonial preservada',
+		image: '/assets/imagen_0.png'
+	},
+	{
+		title: 'Simbolismo Sagrado',
+		description: 'Cada elemento decorativo de la Basílica tiene un significado espiritual, desde los símbolos marianos hasta las representaciones de la fe costarricense.',
+		highlight: 'Iconografía religiosa única',
+		image: '/assets/simbolo-basilica.jpg'
+	}
+];
+---
+
+<MainLayout title="Arquitectura">
+	<!-- Encabezado de Página -->
+	<section class="max-w-4xl mx-auto px-4 pt-16 pb-8">
+		<h1 class="font-sans font-bold text-4xl md:text-5xl text-primary text-center mb-6">
+			La Arquitectura de la Basílica
+		</h1>
+		<p class="text-neutral-gray text-lg text-center leading-relaxed max-w-3xl mx-auto">
+			La Basílica de Nuestra Señora de los Ángeles es una obra maestra arquitectónica 
+			que fusiona el estilo bizantino con elementos coloniales costarricenses. Cada detalle 
+			de su construcción refleja siglos de fe, arte y dedicación, convirtiéndola en uno 
+			de los monumentos religiosos más importantes de Centroamérica.
+		</p>
+	</section>
+
+	<!-- Grid de Tarjetas de Arquitectura -->
+	<section class="max-w-6xl mx-auto px-4 pb-20">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{architectureFeatures.map((feature) => (
+				<article class="group">
+					<!-- Imagen -->
+					<div class="aspect-[4/3] rounded-t-2xl overflow-hidden">
+						<img 
+							src={feature.image} 
+							alt={feature.title}
+							class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+						/>
+					</div>
+					
+					<!-- Cuerpo de la Tarjeta -->
+					<div class="bg-white rounded-b-2xl shadow-sm p-5">
+						<h3 class="font-sans font-semibold text-xl text-primary mb-3">
+							{feature.title}
+						</h3>
+						<p class="text-neutral-gray text-sm leading-relaxed mb-3">
+							{feature.description}
+						</p>
+						<span class="text-accent-gold text-sm font-medium">
+							{feature.highlight}
+						</span>
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
+</MainLayout>

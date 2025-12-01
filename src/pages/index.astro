@@ -1,11 +1,163 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from '../layouts/MainLayout.astro';
+import SiteIcon from '../components/SiteIcon.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Inicio">
+	<!-- Hero Principal -->
+	<section class="max-w-6xl mx-auto px-4 py-16">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<!-- Columna Izquierda -->
+			<div class="space-y-6">
+				<h1 class="font-sans font-bold text-4xl md:text-5xl text-primary leading-tight">
+					Basílica de Nuestra Señora de los Ángeles
+				</h1>
+				<p class="text-neutral-gray text-lg leading-relaxed">
+					Descubre el santuario más importante de Costa Rica, hogar de La Negrita, 
+					nuestra patrona. Un lugar de fe, historia y arquitectura que ha sido 
+					testigo de millones de peregrinos a lo largo de los siglos.
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a 
+						href="/historia" 
+						class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+					>
+						Explorar
+					</a>
+					<a 
+						href="/horarios" 
+						class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+					>
+						Planear Visita
+					</a>
+				</div>
+			</div>
+
+			<!-- Columna Derecha - Imagen de la Basílica -->
+			<div class="rounded-2xl aspect-video overflow-hidden shadow-lg">
+				<img 
+					src="/assets/fachada.jpg" 
+					alt="Fachada de la Basílica de Nuestra Señora de los Ángeles" 
+					class="w-full h-full object-cover"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección: Un Legado de Fe y Belleza -->
+	<section class="bg-white py-16">
+		<div class="max-w-3xl mx-auto text-center px-4">
+			<h2 class="font-sans font-bold text-3xl md:text-4xl text-primary mb-6">
+				Un Legado de Fe y Belleza
+			</h2>
+			<p class="text-neutral-gray text-lg leading-relaxed mb-8">
+				Desde 1635, la Basílica de Los Ángeles ha sido el corazón espiritual de Costa Rica. 
+				Su majestuosa arquitectura de estilo bizantino y su rica historia la convierten en 
+				un destino imperdible para fieles y visitantes de todo el mundo.
+			</p>
+			<a 
+				href="/historia" 
+				class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+			>
+				Descubrir su Historia
+			</a>
+		</div>
+	</section>
+
+	<!-- Sección: Explora la Basílica -->
+	<section class="max-w-6xl mx-auto px-4 py-16">
+		<h2 class="font-sans font-bold text-3xl md:text-4xl text-primary text-center mb-12">
+			Explora la Basílica
+		</h2>
+		
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<!-- Tarjeta 1: Nuestra Historia -->
+			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow duration-200">
+				<SiteIcon
+					name="ph:book-open-text-duotone"
+					variant="circle-gold"
+					sizeClass="w-8 h-8"
+					class="mb-4"
+				/>
+				<h3 class="font-sans font-semibold text-xl text-primary mb-3">
+					Nuestra Historia
+				</h3>
+				<p class="text-neutral-gray text-sm leading-relaxed mb-4">
+					Conoce los orígenes de la Basílica y cómo se convirtió en el centro 
+					de devoción mariana más importante del país.
+				</p>
+				<a 
+					href="/historia" 
+					class="text-accent-gold font-semibold text-sm hover:underline"
+				>
+					Leer más →
+				</a>
+			</article>
+
+			<!-- Tarjeta 2: Arquitectura impresionante -->
+			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow duration-200">
+				<SiteIcon
+					name="ph:columns-duotone"
+					variant="circle-blue"
+					sizeClass="w-8 h-8"
+					class="mb-4"
+				/>
+				<h3 class="font-sans font-semibold text-xl text-primary mb-3">
+					Arquitectura Impresionante
+				</h3>
+				<p class="text-neutral-gray text-sm leading-relaxed mb-4">
+					Admira el estilo bizantino único de la Basílica, sus cúpulas, vitrales 
+					y detalles artísticos que la hacen una joya arquitectónica.
+				</p>
+				<a 
+					href="/arquitectura" 
+					class="text-accent-gold font-semibold text-sm hover:underline"
+				>
+					Descubrir →
+				</a>
+			</article>
+
+			<!-- Tarjeta 3: La Virgen de los Ángeles -->
+			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow duration-200">
+				<SiteIcon
+					name="ph:hand-heart-duotone"
+					variant="circle-gold"
+					sizeClass="w-8 h-8"
+					class="mb-4"
+				/>
+				<h3 class="font-sans font-semibold text-xl text-primary mb-3">
+					La Virgen de los Ángeles
+				</h3>
+				<p class="text-neutral-gray text-sm leading-relaxed mb-4">
+					Descubre la historia de La Negrita, la pequeña imagen que apareció 
+					milagrosamente y se convirtió en la patrona de Costa Rica.
+				</p>
+				<a 
+					href="/virgen-de-los-angeles" 
+					class="text-accent-gold font-semibold text-sm hover:underline"
+				>
+					Más información →
+				</a>
+			</article>
+		</div>
+	</section>
+
+	<!-- Sección: Planifica Tu Peregrinación -->
+	<section class="bg-neutral-gray/10 py-16">
+		<div class="max-w-3xl mx-auto text-center px-4">
+			<h2 class="font-sans font-bold text-3xl md:text-4xl text-primary mb-6">
+				Planifica Tu Peregrinación
+			</h2>
+			<p class="text-neutral-gray text-lg leading-relaxed mb-8">
+				Cada año, millones de fieles caminan hacia Cartago para honrar a la Virgen de los Ángeles. 
+				Prepárate para vivir esta experiencia única de fe y devoción.
+			</p>
+			<a 
+				href="/peregrinacion" 
+				class="inline-block bg-accent-gold hover:bg-accent-gold/90 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-md"
+			>
+				Empieza Tu Viaje
+			</a>
+		</div>
+	</section>
+</MainLayout>

@@ -1,1 +1,33 @@
+/* Google Fonts - Importar primero */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&display=swap');
+
 @import "tailwindcss";
+
+/* Design System - Basílica de Los Ángeles (Guía Oficial) */
+@theme {
+  /* Colores - Paleta Oficial */
+  --color-primary: #1F2A44;          /* Azul principal - RGB: 31, 42, 68 */
+  --color-primary-dark: #2F3D6E;     /* Azul secundario - RGB: 47, 61, 110 */
+  --color-accent-gold: #936626;      /* Dorado acento - RGB: 147, 102, 38 */
+  --color-neutral-gray: #727F84;     /* Gris medio - RGB: 114, 127, 132 */
+  --color-background: #F5F5F7;       /* Fondo claro */
+  --color-white: #FFFFFF;            /* Blanco */
+  --color-black: #000000;            /* Negro */
+
+  /* Tipografías - Según guía oficial */
+  --font-sans: "Montserrat", system-ui, sans-serif;           /* Principal */
+  --font-serif: "Cormorant Garamond", Georgia, serif;         /* Acentos elegantes (similar a Le Major) */
+  --font-script: "Great Vibes", cursive;                      /* Script (similar a Amsterdam) */
+  --font-accent: "Cormorant Garamond", Georgia, serif;        /* Alias para compatibilidad */
+}
+
+/* Estilos base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
