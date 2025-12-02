@@ -1,116 +1,144 @@
 ---
-const navLinks = [
+// Enlaces principales (más cortos y concisos)
+const mainNavLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/historia', label: 'Historia' },
   { href: '/arquitectura', label: 'Arquitectura' },
-  { href: '/virgen-de-los-angeles', label: 'Virgen de los Ángeles' },
+  { href: '/virgen-de-los-angeles', label: 'La Virgen' },
   { href: '/peregrinacion', label: 'Peregrinación' },
-  { href: '/horarios', label: 'Horarios y Servicios' },
-  { href: '/galeria', label: 'Galería Multimedia' },
-  { href: '/noticias', label: 'Noticias y Eventos' },
+];
+
+const secondaryNavLinks = [
+  { href: '/horarios', label: 'Horarios' },
+  { href: '/galeria', label: 'Galería' },
+  { href: '/noticias', label: 'Noticias' },
   { href: '/contacto', label: 'Contacto' },
 ];
+
+const allNavLinks = [...mainNavLinks, ...secondaryNavLinks];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
-      <div class="flex-shrink-0">
-        <a href="/" class="text-white font-bold text-xl tracking-wide">
-          Basílica Ángeles
-        </a>
-      </div>
-
-      <!-- Desktop Menu -->
-      <div class="hidden xl:flex items-center space-x-1">
-        {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="text-white/90 hover:text-white hover:bg-primary-dark px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-
-      <!-- Right Side: Language & Donate -->
-      <div class="hidden xl:flex items-center space-x-4">
-        <!-- Language Selector -->
-        <div class="flex items-center space-x-2 text-white/80 text-sm">
-          <button class="hover:text-white font-semibold text-white">ES</button>
-          <span class="text-white/50">|</span>
-          <button class="hover:text-white">EN</button>
-        </div>
-
-        <!-- Donate Button -->
-        <a
-          href="/donar"
-          class="bg-accent-gold hover:bg-accent-gold/90 text-white px-5 py-2 rounded-full font-semibold text-sm transition-colors duration-200 shadow-md"
-        >
-          Donar
-        </a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <div class="xl:hidden flex items-center">
-        <button
-          id="mobile-menu-button"
-          type="button"
-          class="text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-md p-2"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Abrir menú principal</span>
-          <!-- Hamburger Icon -->
-          <svg
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden xl:hidden pb-4">
-      <div class="flex flex-col space-y-1 pt-2 border-t border-white/20">
-        {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="text-white/90 hover:text-white hover:bg-primary-dark px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-          >
-            {link.label}
-          </a>
-        ))}
+  <!-- Barra superior con logo, idioma y donar -->
+  <div class="bg-primary-dark/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-10 text-xs">
+        <!-- Info rápida -->
+        <span class="hidden sm:block text-white/70">
+          Santuario Nacional de Costa Rica
+        </span>
         
-        <!-- Mobile Language & Donate -->
-        <div class="flex items-center justify-between pt-4 mt-2 border-t border-white/20">
-          <div class="flex items-center space-x-2 text-white/80 text-sm">
+        <!-- Idioma y Donar -->
+        <div class="flex items-center space-x-4 ml-auto">
+          <div class="flex items-center space-x-2 text-white/80">
             <button class="hover:text-white font-semibold text-white">ES</button>
             <span class="text-white/50">|</span>
             <button class="hover:text-white">EN</button>
           </div>
           <a
             href="/donar"
-            class="bg-accent-gold hover:bg-accent-gold/90 text-white px-5 py-2 rounded-full font-semibold text-sm transition-colors duration-200"
+            class="bg-accent-gold hover:bg-accent-gold/90 text-white px-4 py-1.5 rounded-full font-semibold text-xs transition-colors duration-200"
           >
             Donar
           </a>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Navegación principal -->
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center gap-2 text-white">
+          <span class="font-bold text-lg tracking-wide">BASÍLICA</span>
+          <span class="hidden sm:inline text-white/80 text-sm font-light">de Los Ángeles</span>
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center">
+        <div class="flex items-center space-x-1">
+          {allNavLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden flex items-center">
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-white/30 rounded-lg p-2"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Abrir menú</span>
+          <svg
+            id="menu-icon-open"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg
+            id="menu-icon-close"
+            class="h-6 w-6 hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-primary-dark/95 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      {allNavLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block text-white/90 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
 </header>
 
-<!-- Spacer to prevent content from going under fixed navbar -->
-<div class="h-16"></div>
+<!-- Spacer para compensar el navbar fijo (altura total: 40px + 56px = 96px) -->
+<div class="h-24"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    
+    if (menuButton && mobileMenu && iconOpen && iconClose) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        
+        mobileMenu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+        
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+  });
+</script>
