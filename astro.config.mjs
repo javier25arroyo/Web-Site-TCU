@@ -11,5 +11,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [icon()]
+  integrations: [icon()],
+  site: 'https://javier25arroyo.github.io',
+  base: '/Web-Site-TCU',
 });
