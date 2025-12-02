@@ -20,13 +20,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Actualizar npm
         run: npm install -g npm@latest
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --force
 
       - name: Ejecutar ESLint (análisis estático)
         run: npm run lint
@@ -58,10 +57,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --force
 
       - name: Build del proyecto
         run: npm run build
