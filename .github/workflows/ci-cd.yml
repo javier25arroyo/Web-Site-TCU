@@ -26,7 +26,7 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Instalar dependencias
-        run: npm ci
+        run: npm install --omit=optional
 
       - name: Ejecutar ESLint (análisis estático)
         run: npm run lint
