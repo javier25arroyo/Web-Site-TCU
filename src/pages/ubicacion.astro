@@ -1,0 +1,140 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="Ubicación y Cómo Llegar">
+
+<section class="max-w-4xl mx-auto px-4 py-12">
+
+  <!-- Título principal -->
+  <h1 class="text-4xl font-bold text-primary text-center mb-6">
+    Ubicación y Cómo Llegar
+  </h1>
+
+  <p class="text-neutral-gray text-center max-w-2xl mx-auto mb-12">
+    Encuentra la Basílica de Los Ángeles y planifica tu visita con nuestras guías detalladas de transporte.
+  </p>
+
+  <!-- Nuestro Hogar Espiritual -->
+  <section class="mb-12 text-center">
+    <h2 class="text-2xl font-semibold text-primary mb-4">Nuestro Hogar Espiritual</h2>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+      <a href="#" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition flex items-center gap-2 justify-center">
+        <Icon name="ph:map-pin-duotone" class="w-5 h-5" />
+        Ver en Google Maps
+      </a>
+
+      <a href="#" class="bg-accent-gold text-white px-6 py-3 rounded-full hover:bg-accent-gold/90 transition flex items-center gap-2 justify-center">
+        <Icon name="ph:signpost-duotone" class="w-5 h-5" />
+        Obtener Indicaciones
+      </a>
+    </div>
+  </section>
+
+  <!-- Información de Contacto -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold text-primary mb-4">Información de Contacto</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-4">
+
+      <p class="flex items-center gap-3 text-neutral-gray">
+        <Icon name="ph:map-trifold-duotone" class="w-6 h-6 text-accent-gold" />
+        Calle 15, Cartago, 30101
+      </p>
+
+      <p class="flex items-center gap-3 text-neutral-gray">
+        <Icon name="ph:phone-duotone" class="w-6 h-6 text-accent-gold" />
+        +506 2256-1234
+      </p>
+
+      <p class="flex items-center gap-3 text-neutral-gray">
+        <Icon name="ph:envelope-duotone" class="w-6 h-6 text-accent-gold" />
+        <a href="mailto:info@basilica-angeles.org" class="underline hover:text-primary">
+          info@basilica-angeles.org
+        </a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Cómo Llegar a la Basílica -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold text-primary mb-6">Cómo Llegar a la Basílica</h2>
+
+    <div class="grid gap-6 md:grid-cols-3">
+
+      <!-- En Coche -->
+      <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2 mb-2">
+          <Icon name="ph:car-duotone" class="w-6 h-6 text-accent-gold" />
+          En Coche
+        </h3>
+        <p class="text-neutral-gray text-sm leading-relaxed">
+          La Basílica es fácilmente accesible en coche desde cualquier punto del país. Hay estacionamiento público y parqueos privados cercanos.
+        </p>
+      </div>
+
+      <!-- A Pie -->
+        <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2 mb-2">
+            <Icon name="ph:person-simple-walk-duotone" class="w-6 h-6 text-accent-gold" />
+            A Pie
+        </h3>
+        <p class="text-neutral-gray text-sm leading-relaxed">
+            Desde la Plaza Mayor, es un paseo agradable de 10 minutos siguiendo los senderos peatonales y las indicaciones.
+        </p>
+        </div>
+
+
+      <!-- Transporte Público -->
+      <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2 mb-2">
+          <Icon name="ph:bus-duotone" class="w-6 h-6 text-accent-gold" />
+          Transporte Público
+        </h3>
+        <p class="text-neutral-gray text-sm leading-relaxed">
+          Múltiples rutas de autobús llegan al centro de Cartago. Desde San José, tome un autobús LUMACA. La estación de tren está a poca distancia.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Puntos de Interés Cercanos -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold text-primary mb-6">Puntos de Interés Cercanos</h2>
+
+    <div class="grid gap-6 md:grid-cols-3">
+
+      <!-- Parque Central -->
+      <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary mb-2">Parque Central de Cartago</h3>
+        <p class="text-neutral-gray text-sm leading-relaxed">
+          Un lugar ideal para relajarse y disfrutar del ambiente local, a pocos minutos de la Basílica.
+        </p>
+      </div>
+
+      <!-- Ruinas -->
+      <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary mb-2">Ruinas de Santiago Apóstol</h3>
+        <p class="text-neutral-gray text-sm leading-relaxed">
+          Explora la historia colonial de Cartago en este sitio arqueológico fascinante.
+        </p>
+      </div>
+
+      <!-- Mercado -->
+      <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary mb-2">Mercado Municipal de Cartago</h3>
+        <p class="text-neutral-gray text-sm leading-relaxed">
+          Sumérgete en la cultura local y encuentra productos frescos y artesanías.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</section>
+
+</MainLayout>

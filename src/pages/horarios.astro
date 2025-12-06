@@ -1,0 +1,201 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="Horarios y Servicios">
+
+<section class="max-w-4xl mx-auto px-4 py-12">
+
+  <!-- Título principal -->
+  <h1 class="text-4xl font-bold text-primary text-center mb-6">
+    Horarios y Servicios
+  </h1>
+
+  <p class="text-neutral-gray text-center max-w-2xl mx-auto mb-12">
+    Planifique su visita a la Basílica de Los Ángeles. Aquí encontrará información detallada sobre nuestros horarios de misas, confesiones, apertura y otros servicios.
+  </p>
+
+  <!-- Horarios de Misas -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold text-primary mb-4">Horarios de Misas</h2>
+
+    <div class="space-y-4">
+
+      <!-- Lunes a Sábado -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:calendar-check-duotone" class="w-5 h-5 text-accent-gold" />
+          Lunes a Sábado
+        </h3>
+        <p class="text-neutral-gray mt-1">07:00 AM, 11:00 AM, 06:00 PM</p>
+      </div>
+
+      <!-- Domingos y Festivos -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:sun-duotone" class="w-5 h-5 text-accent-gold" />
+          Domingos y Festivos
+        </h3>
+        <p class="text-neutral-gray mt-1">
+          07:00 AM, 09:00 AM, 11:00 AM, 04:00 PM, 06:00 PM
+        </p>
+        <p class="text-primary-dark font-medium mt-1">Misa Solemne de 11:00 AM</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Horarios de Confesiones -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold text-primary mb-4">Horarios de Confesiones</h2>
+
+    <div class="space-y-4">
+
+      <!-- Lunes a Viernes -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:clock-duotone" class="w-5 h-5 text-accent-gold" />
+          Lunes a Viernes
+        </h3>
+        <p class="text-neutral-gray mt-1">10:00 AM - 12:00 PM</p>
+        <p class="text-neutral-gray text-sm">Padres Franciscanos</p>
+      </div>
+
+      <!-- Primer Viernes -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:heart-duotone" class="w-5 h-5 text-accent-gold" />
+          Primer Viernes de cada mes
+        </h3>
+        <p class="text-neutral-gray mt-1">Adicional 07:00 PM</p>
+        <p class="text-primary-dark font-medium">Misa del Sagrado Corazón</p>
+      </div>
+
+      <!-- Sábados -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:church-duotone" class="w-5 h-5 text-accent-gold" />
+          Sábados
+        </h3>
+        <p class="text-neutral-gray mt-1">09:00 AM - 01:00 PM</p>
+        <p class="text-neutral-gray text-sm">En Capilla del Perdón</p>
+      </div>
+
+      <!-- Previo a Misas -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h3 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:timer-duotone" class="w-5 h-5 text-accent-gold" />
+          Previo a Misas
+        </h3>
+        <p class="text-neutral-gray mt-1">30 minutos antes de cada Misa</p>
+      </div>
+
+    </div>
+
+    <!-- Botones -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-6">
+      <a href="#" class="bg-primary text-white px-6 py-3 rounded-full text-center hover:bg-primary-dark transition">
+        Más Información
+      </a>
+      <a href="#" class="bg-accent-gold text-white px-6 py-3 rounded-full text-center hover:bg-accent-gold/90 transition">
+        Solicitar Confesión
+      </a>
+    </div>
+  </section>
+
+  <!-- Servicios Especiales -->
+  <section class="mb-12">
+    <h3 class="text-xl font-semibold text-primary mb-4">Servicios Especiales</h3>
+
+    <div class="space-y-4">
+
+      <!-- Bautismos -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:baby-duotone" class="w-5 h-5 text-accent-gold" />
+          Bautismos
+        </h4>
+        <p class="text-neutral-gray mt-1">Sábados 10:00 AM</p>
+        <p class="text-neutral-gray text-sm">Previa inscripción en oficina parroquial</p>
+      </div>
+
+      <!-- Matrimonios -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:heart-straight-duotone" class="w-5 h-5 text-accent-gold" />
+          Matrimonios
+        </h4>
+        <p class="text-neutral-gray mt-1">Según agenda</p>
+        <p class="text-neutral-gray text-sm">Consultar disponibilidad con antelación</p>
+      </div>
+
+      <!-- Unción de Enfermos -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:cross-duotone" class="w-5 h-5 text-accent-gold" />
+          Unción de Enfermos
+        </h4>
+        <p class="text-neutral-gray mt-1">A solicitud</p>
+        <p class="text-neutral-gray text-sm">Contactar a la oficina</p>
+      </div>
+
+      <!-- Visitas guiadas -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:map-trifold-duotone" class="w-5 h-5 text-accent-gold" />
+          Visitas guiadas
+        </h4>
+        <p class="text-neutral-gray mt-1">Jueves y Viernes 02:00 PM</p>
+        <p class="text-neutral-gray text-sm">Reservar en línea</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Horarios de Apertura -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold text-primary mb-4">Horarios de Apertura de la Basílica</h2>
+
+    <div class="space-y-4">
+
+      <!-- Basílica -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:church-duotone" class="w-5 h-5 text-accent-gold" />
+          Basílica
+        </h4>
+        <p class="text-neutral-gray mt-1">Lunes a Domingo: 06:30 AM - 07:30 PM</p>
+      </div>
+
+      <!-- Oficina Parroquial -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:building-duotone" class="w-5 h-5 text-accent-gold" />
+          Oficina Parroquial
+        </h4>
+        <p class="text-neutral-gray mt-1">
+          Lunes a Viernes: 08:30 AM - 12:00 PM, 01:00 PM - 05:00 PM
+        </p>
+      </div>
+
+      <!-- Tienda -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 class="font-semibold text-primary flex items-center gap-2">
+          <Icon name="ph:shopping-bag-duotone" class="w-5 h-5 text-accent-gold" />
+          Tienda de Artículos Religiosos
+        </h4>
+        <p class="text-neutral-gray mt-1">Lunes a Sábado: 09:00 AM - 06:00 PM</p>
+      </div>
+
+    </div>
+
+    <!-- Enlaces -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-6">
+      <a href="/ubicacion" class="text-primary underline hover:text-primary-dark">Ver Ubicación</a>
+    </div>
+  </section>
+
+</section>
+
+</MainLayout>
