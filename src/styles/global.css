@@ -26,8 +26,44 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selección de texto con colores de marca */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Focus visible mejorado para accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 2px;
+}
+
+/* Transiciones suaves globales */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Mejora de legibilidad en párrafos largos */
+p {
+  text-wrap: pretty;
 }
