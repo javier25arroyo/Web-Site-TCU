@@ -1,0 +1,139 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="Galería Multimedia">
+
+<section class="max-w-5xl mx-auto px-4 py-12">
+
+  <!-- Título principal -->
+  <h1 class="text-4xl font-bold text-primary text-center mb-10">
+    Galería Multimedia
+  </h1>
+
+  <!-- Fotografías -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-semibold text-primary mb-6">
+      Fotografías de la Basílica
+    </h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+
+      <!-- Foto 1 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:image-duotone" class="w-10 h-10" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-primary">Fachada Principal de la Basílica</h3>
+          <p class="text-neutral-gray text-sm mt-1">
+            Una vista majestuosa de la entrada principal, destacando la arquitectura neoclásica.
+          </p>
+        </div>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:image-duotone" class="w-10 h-10" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-primary">Interior del Altar Mayor</h3>
+          <p class="text-neutral-gray text-sm mt-1">
+            El detalle del altar, con sus decoraciones doradas y el ambiente de devoción.
+          </p>
+        </div>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:image-duotone" class="w-10 h-10" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-primary">La Cúpula Central</h3>
+          <p class="text-neutral-gray text-sm mt-1">
+            Una impresionante toma de la cúpula, revelando la complejidad de su diseño.
+          </p>
+        </div>
+      </div>
+
+      <!-- Foto 4 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:image-duotone" class="w-10 h-10" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-primary">Jardines y Entorno</h3>
+          <p class="text-neutral-gray text-sm mt-1">
+            Los bellos jardines que rodean la Basílica, un lugar de paz y contemplación.
+          </p>
+        </div>
+      </div>
+
+      <!-- Foto 5 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:image-duotone" class="w-10 h-10" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-primary">Detalles del Vitral</h3>
+          <p class="text-neutral-gray text-sm mt-1">
+            Primer plano de un vitral, mostrando la rica paleta de colores y el arte religioso.
+          </p>
+        </div>
+      </div>
+
+      <!-- Foto 6 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:image-duotone" class="w-10 h-10" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-primary">Procesión Anual</h3>
+          <p class="text-neutral-gray text-sm mt-1">
+            Imágenes de la devota procesión que se realiza cada año, un evento de gran fe.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Botón cargar más -->
+    <div class="text-center mt-10">
+      <button class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition flex items-center gap-2 mx-auto">
+        <Icon name="ph:plus-circle-duotone" class="w-5 h-5" />
+        Cargar Más Fotografías
+      </button>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-semibold text-primary mb-6">
+      Videos y Recorridos Virtuales
+    </h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+
+      <!-- Video 1 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:video-camera-duotone" class="w-10 h-10" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-primary">Video: Recorrido por la Basílica</h3>
+          <p class="text-neutral-gray text-sm mt-1">
+            Un recorrido visual completo por el interior y exterior de la Basílica.
+          </p>
+          <a href="#" class="text-primary underline hover:text-primary-dark mt-2 inline-block">
+            Ver Video
+          </a>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-gray-200 h-40 flex items-center justify-center text-neutral-gray">
+          <Icon name="ph:video-camera-duotone" class="w-10 h-10" />

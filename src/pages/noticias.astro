@@ -1,0 +1,185 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+
+type Post = {
+  category: string;
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+};
+
+const mainPost: Post = {
+  category: "Anuncio Importante",
+  title: "La Basílica de Los Ángeles conmemora su centenario con eventos especiales",
+  description:
+    "Únase a nosotros en la celebración de un siglo de fe, arte y patrimonio. Este año marca un hito significativo en la historia de la Basílica de Los Ángeles, y hemos preparado una serie de eventos especiales para conmemorar esta ocasión trascendental. Descubra los detalles de las misas conmemorativas, exposiciones de arte sacro y conferencias históricas que destacarán la riqueza cultural y espiritual de nuestro santuario.",
+  date: "25 de Noviembre, 2023",
+  readTime: "5 min de lectura",
+};
+
+const latestPosts: Post[] = [
+  {
+    category: "Eventos",
+    title: "Peregrinación anual a la Virgen de los Ángeles",
+    description: "Detalles sobre la próxima peregrinación, rutas y horarios.",
+    date: "10 de Diciembre, 2023",
+    readTime: "3 min de lectura",
+  },
+  {
+    category: "Noticias",
+    title: "Restauración de vidrieras históricas",
+    description:
+      "Avances en el proyecto de conservación de nuestro patrimonio artístico.",
+    date: "01 de Diciembre, 2023",
+    readTime: "4 min de lectura",
+  },
+  {
+    category: "Música Sacra",
+    title: "Concierto de Adviento con el Coro de la Basílica",
+    description:
+      "Un evento musical para preparar el espíritu para la Navidad.",
+    date: "20 de Noviembre, 2023",
+    readTime: "2 min de lectura",
+  },
+];
+
+const morePosts: Post[] = [
+  {
+    category: "Exposiciones",
+    title: "Nueva exposición: Tesoros de la Basílica",
+    description:
+      "Descubra artefactos y documentos inéditos de nuestra historia.",
+    date: "15 de Noviembre, 2023",
+    readTime: "6 min de lectura",
+  },
+  {
+    category: "Homilías",
+    title: "Mensaje del Párroco: La importancia de la fe en la comunidad",
+    description:
+      "Reflexiones sobre la vida parroquial y los valores cristianos.",
+    date: "05 de Noviembre, 2023",
+    readTime: "7 min de lectura",
+  },
+  {
+    category: "Comunidad",
+    title: "Jornada de voluntariado en la Basílica",
+    description:
+      "Invitamos a la comunidad a participar en la conservación de nuestro templo.",
+    date: "28 de Octubre, 2023",
+    readTime: "2 min de lectura",
+  },
+];
+---
+
+<MainLayout title="Noticias y Eventos">
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <!-- Título principal -->
+    <header class="mb-10">
+      <h1 class="text-4xl font-bold text-primary text-center mb-4">
+        Noticias y Eventos
+      </h1>
+    </header>
+
+    <!-- Anuncio Importante (post principal) -->
+    <section class="mb-16">
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+        <p class="text-accent-gold text-sm font-semibold uppercase tracking-wide mb-2">
+          {mainPost.category}
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-semibold text-primary mb-4">
+          {mainPost.title}
+        </h2>
+
+        <p class="text-neutral-gray text-sm md:text-base leading-relaxed mb-4">
+          {mainPost.description}
+        </p>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 text-sm text-neutral-gray mt-4">
+          <span>
+            {mainPost.date} · {mainPost.readTime}
+          </span>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
+          >
+            Leer más
+            <Icon name="ph:arrow-right-duotone" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Últimas Actualizaciones -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-primary mb-6">
+        Últimas Actualizaciones
+      </h2>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {latestPosts.map((post) => (
+          <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 flex flex-col">
+            <p class="text-accent-gold text-xs font-semibold uppercase tracking-wide mb-2">
+              {post.category}
+            </p>
+
+            <h3 class="text-lg font-semibold text-primary mb-2">
+              {post.title}
+            </h3>
+
+            <p class="text-neutral-gray text-sm leading-relaxed mb-3 flex-1">
+              {post.description}
+            </p>
+
+            <div class="mt-2 text-xs text-neutral-gray">
+              {post.date} · {post.readTime}
+            </div>
+
+            <a
+              href="#"
+              class="mt-3 inline-flex items-center gap-1 text-primary text-sm font-semibold hover:underline"
+            >
+              Leer más
+              <Icon name="ph:arrow-right-duotone" class="w-4 h-4" />
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Más secciones (Exposiciones, Homilías, Comunidad) -->
+    <section class="mb-10">
+      <div class="grid gap-6 md:grid-cols-3">
+        {morePosts.map((post) => (
+          <article class="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 flex flex-col">
+            <p class="text-accent-gold text-xs font-semibold uppercase tracking-wide mb-2">
+              {post.category}
+            </p>
+
+            <h3 class="text-lg font-semibold text-primary mb-2">
+              {post.title}
+            </h3>
+
+            <p class="text-neutral-gray text-sm leading-relaxed mb-3 flex-1">
+              {post.description}
+            </p>
+
+            <div class="mt-2 text-xs text-neutral-gray">
+              {post.date} · {post.readTime}
+            </div>
+
+            <a
+              href="#"
+              class="mt-3 inline-flex items-center gap-1 text-primary text-sm font-semibold hover:underline"
+            >
+              Leer más
+              <Icon name="ph:arrow-right-duotone" class="w-4 h-4" />
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </section>
+</MainLayout>
