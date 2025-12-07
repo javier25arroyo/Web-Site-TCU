@@ -105,7 +105,7 @@ const allNavLinks = [...mainNavLinks, ...secondaryNavLinks];
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-primary-dark/95 backdrop-blur-sm">
+  <div id="mobile-menu" class="lg:hidden bg-primary-dark/95 backdrop-blur-sm overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
     <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
       {allNavLinks.map((link) => (
         <a
@@ -131,13 +131,22 @@ const allNavLinks = [...mainNavLinks, ...secondaryNavLinks];
     
     if (menuButton && mobileMenu && iconOpen && iconClose) {
       menuButton.addEventListener('click', () => {
-        const isOpen = !mobileMenu.classList.contains('hidden');
+        const isOpen = mobileMenu.classList.contains('max-h-0');
         
-        mobileMenu.classList.toggle('hidden');
+        if (isOpen) {
+          // Abrir menú
+          mobileMenu.classList.remove('max-h-0', 'opacity-0');
+          mobileMenu.classList.add('max-h-96', 'opacity-100');
+        } else {
+          // Cerrar menú
+          mobileMenu.classList.remove('max-h-96', 'opacity-100');
+          mobileMenu.classList.add('max-h-0', 'opacity-0');
+        }
+        
         iconOpen.classList.toggle('hidden');
         iconClose.classList.toggle('hidden');
         
-        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-expanded', String(isOpen));
       });
     }
   });
