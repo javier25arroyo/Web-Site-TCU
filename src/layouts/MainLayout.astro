@@ -13,10 +13,31 @@ interface Props {
 const { 
   title, 
   description = "Sitio web oficial de la Basílica de Nuestra Señora de los Ángeles, Cartago, Costa Rica. Santuario Nacional y lugar de peregrinación.",
-  image = "/assets/og-image.jpg"
+  image = "/assets/fachada.jpg"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CatholicChurch",
+  "name": "Basílica de Nuestra Señora de los Ángeles",
+  "url": Astro.site,
+  "logo": new URL("/assets/simbolo-basilica.jpg", Astro.site),
+  "image": new URL("/assets/fachada.jpg", Astro.site),
+  "description": "Santuario Nacional y lugar de peregrinación en Cartago, Costa Rica.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cartago",
+    "addressRegion": "Cartago",
+    "addressCountry": "CR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 9.8638,
+    "longitude": -83.9128
+  }
+};
 ---
 
 <!doctype html>
@@ -33,6 +54,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
     
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
