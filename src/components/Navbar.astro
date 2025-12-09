@@ -1,0 +1,274 @@
+---
+// Enlaces principales (más cortos y concisos)
+const mainNavLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/arquitectura', label: 'Arquitectura' },
+  { href: '/virgen-de-los-angeles', label: 'La Virgen' },
+  { href: '/peregrinacion', label: 'Peregrinación' },
+];
+
+const secondaryNavLinks = [
+  { href: '/horarios', label: 'Horarios' },
+  { href: '/ubicacion', label: 'Ubicación' },
+  { href: '/galeria', label: 'Galería' },
+  { href: '/noticias', label: 'Noticias' },
+  { href: '/contacto', label: 'Contacto' },
+];
+
+const allNavLinks = [...mainNavLinks, ...secondaryNavLinks];
+const currentPath = Astro.url.pathname;
+---
+
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg transition-all duration-500 ease-out">
+  <!-- Barra superior con logo, idioma y donar -->
+  <div class="bg-primary-dark/50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-10 text-xs">
+        <!-- Info rápida -->
+        <span class="hidden sm:block text-white/70 transition-opacity duration-300">
+          Santuario Nacional de Costa Rica
+        </span>
+        
+        <!-- Idioma y Donar -->
+        <div class="flex items-center space-x-4 ml-auto">
+          <div class="flex items-center space-x-2 text-white/80">
+            <button class="hover:text-white font-semibold text-white transition-colors duration-200">ES</button>
+            <span class="text-white/50">|</span>
+            <button class="hover:text-white transition-colors duration-200">EN</button>
+          </div>
+          <a
+            href="/donar"
+            class="bg-accent-gold hover:bg-accent-gold/90 text-white px-4 py-1.5 rounded-full font-semibold text-xs transition-all duration-300 hover:shadow-md hover:scale-105 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+          >
+            Donar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegación principal -->
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center gap-2 text-white group transition-transform duration-300 hover:scale-[1.02]">
+          <span class="font-bold text-lg tracking-wide group-hover:text-white/90 transition-colors duration-200">BASÍLICA</span>
+          <span class="hidden sm:inline text-white/80 text-sm font-light group-hover:text-white/70 transition-colors duration-200">de Los Ángeles</span>
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center">
+        <div class="flex items-center space-x-1">
+          {allNavLinks.map((link) => (
+            <a
+              href={link.href}
+              aria-current={currentPath === link.href ? 'page' : undefined}
+              class:list={[
+                'relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none overflow-hidden group',
+                currentPath === link.href
+                  ? 'text-white bg-white/15'
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              ]}
+            >
+              <span class="relative z-10">{link.label}</span>
+              <span class="absolute bottom-1 left-3 right-3 h-0.5 bg-accent-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-full" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button - Hamburger animado -->
+      <div class="lg:hidden flex items-center">
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="relative w-10 h-10 text-white focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none rounded-lg transition-all duration-300 hover:bg-white/10 group"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Menú de navegación"
+        >
+          <span class="sr-only">Abrir menú</span>
+          <!-- Hamburger Icon con animación a X -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span id="bar-1" class="block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ease-out transform origin-center"></span>
+            <span id="bar-2" class="block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ease-out mt-1.5 transform origin-center"></span>
+            <span id="bar-3" class="block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ease-out mt-1.5 transform origin-center"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Overlay para cerrar menú al tocar fuera -->
+  <div 
+    id="menu-overlay" 
+    class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[-1] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Mobile Menu -->
+  <div 
+    id="mobile-menu" 
+    class="lg:hidden bg-gradient-to-b from-primary-dark to-primary overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] max-h-0 opacity-0 border-t border-white/10"
+  >
+    <nav class="max-w-7xl mx-auto px-4 py-3" aria-label="Menú móvil">
+      <div class="space-y-1">
+        {allNavLinks.map((link, index) => (
+          <a
+            href={link.href}
+            aria-current={currentPath === link.href ? 'page' : undefined}
+            class:list={[
+              'mobile-nav-item flex items-center gap-3 px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none transform opacity-0 translate-y-2',
+              currentPath === link.href
+                ? 'text-white bg-accent-gold/20 border-l-4 border-accent-gold'
+                : 'text-white/90 hover:text-white hover:bg-white/10 hover:translate-x-1'
+            ]}
+            data-index={index}
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-gold/60"></span>
+            {link.label}
+          </a>
+        ))}
+      </div>
+      
+      <!-- Botón de donar en móvil -->
+      <div class="mt-4 pt-4 border-t border-white/10">
+        <a
+          href="/donar"
+          class="mobile-nav-item flex items-center justify-center gap-2 w-full bg-accent-gold hover:bg-accent-gold/90 text-white px-6 py-3.5 rounded-xl font-semibold text-base transition-all duration-300 hover:shadow-lg hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none opacity-0 translate-y-2"
+          data-index="9"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          Hacer una donación
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Spacer para compensar el navbar fijo (altura total: 40px + 56px = 96px) -->
+<div class="h-24"></div>
+
+<script>
+  function initMobileMenu() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+    const header = document.getElementById('main-header');
+    const bar1 = document.getElementById('bar-1');
+    const bar2 = document.getElementById('bar-2');
+    const bar3 = document.getElementById('bar-3');
+    const navItems = document.querySelectorAll('.mobile-nav-item');
+    
+    let isMenuOpen = false;
+    
+    function openMenu() {
+      isMenuOpen = true;
+      
+      // Animar hamburguesa a X
+      bar1?.classList.add('rotate-45', 'translate-y-[8px]');
+      bar2?.classList.add('opacity-0', 'scale-x-0');
+      bar3?.classList.add('-rotate-45', '-translate-y-[8px]');
+      
+      // Mostrar overlay
+      overlay?.classList.remove('opacity-0', 'pointer-events-none');
+      overlay?.classList.add('opacity-100', 'pointer-events-auto');
+      
+      // Abrir menú
+      mobileMenu?.classList.remove('max-h-0', 'opacity-0');
+      mobileMenu?.classList.add('max-h-[85vh]', 'opacity-100');
+      
+      // Animar elementos del menú con stagger
+      navItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.remove('opacity-0', 'translate-y-2');
+          item.classList.add('opacity-100', 'translate-y-0');
+        }, 100 + (index * 50));
+      });
+      
+      menuButton?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden'; // Prevenir scroll
+    }
+    
+    function closeMenu() {
+      isMenuOpen = false;
+      
+      // Animar X a hamburguesa
+      bar1?.classList.remove('rotate-45', 'translate-y-[8px]');
+      bar2?.classList.remove('opacity-0', 'scale-x-0');
+      bar3?.classList.remove('-rotate-45', '-translate-y-[8px]');
+      
+      // Ocultar overlay
+      overlay?.classList.add('opacity-0', 'pointer-events-none');
+      overlay?.classList.remove('opacity-100', 'pointer-events-auto');
+      
+      // Ocultar elementos del menú inmediatamente
+      navItems.forEach((item) => {
+        item.classList.add('opacity-0', 'translate-y-2');
+        item.classList.remove('opacity-100', 'translate-y-0');
+      });
+      
+      // Cerrar menú
+      mobileMenu?.classList.add('max-h-0', 'opacity-0');
+      mobileMenu?.classList.remove('max-h-[85vh]', 'opacity-100');
+      
+      menuButton?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = ''; // Restaurar scroll
+    }
+    
+    // Toggle menú
+    menuButton?.addEventListener('click', () => {
+      if (isMenuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+    
+    // Cerrar al hacer clic en overlay
+    overlay?.addEventListener('click', closeMenu);
+    
+    // Cerrar al hacer clic en un enlace
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+    
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    });
+    
+    // Efecto de scroll en el navbar
+    if (header) {
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        
+        if (currentScroll > 50) {
+          header.classList.add('shadow-xl');
+          header.classList.remove('shadow-lg');
+        } else {
+          header.classList.remove('shadow-xl');
+          header.classList.add('shadow-lg');
+        }
+      }, { passive: true });
+    }
+  }
+  
+  // Inicializar en carga inicial
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  
+  // Re-inicializar después de View Transitions
+  document.addEventListener('astro:after-swap', () => {
+    // Resetear estado del body
+    document.body.style.overflow = '';
+    initMobileMenu();
+  });
+</script>

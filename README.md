@@ -1,162 +1,65 @@
-# Web Site TCU
+# Basílica de Nuestra Señora de los Ángeles – Sitio Web
 
-A modern web application built with Astro framework, optimized for performance.
+Aplicación construida con Astro + Tailwind CSS para compartir la historia, arquitectura y devoción alrededor de la Basílica de Los Ángeles en Cartago.
 
-## 📋 Prerequisites
+## 📋 Requisitos
 
-### Node.js Version Requirements
+- Node.js **20.18.0+** y npm **10.0.0+** (verifica con `node --version` y `npm --version`).
+- Se recomienda usar NVM/nvm-windows para gestionar versiones (`nvm install 20.18.0 && nvm use 20.18.0`).
 
-⚠️ **Important:** This project requires **Node.js version 20.18.0 or higher** and **npm version 10.0.0 or higher**.
+## 🚀 Puesta en marcha
 
-#### Verify your Node.js version:
-```bash
-node --version  # Should output v20.18.0 or higher
-npm --version   # Should output 10.0.0 or higher
-```
-
-#### Installing the correct Node.js version:
-
-**Option 1: Using NVM (Node Version Manager) - Recommended**
-```bash
-# For Unix/macOS:
-nvm install 20.18.0
-nvm use 20.18.0
-
-# For Windows (using nvm-windows):
-nvm install 20.18.0
-nvm use 20.18.0
-```
-
-**Option 2: Direct Download**
-- Download Node.js v20.12.2 or higher from [nodejs.org](https://nodejs.org/)
-- Choose the LTS version for stability
-
-## 🚀 Getting Started
-
-### Installation
-
-1. Clone the repository:
 ```bash
 git clone <repository-url>
 cd Web-Site-TCU
-```
-
-2. Install dependencies:
-```bash
 npm install
+npm run dev   # Servidor en http://localhost:4321
+
+npm run build   # Compila a ./dist
+npm run preview # Sirve el build generado
 ```
 
-### Development
-
-Start the development server:
-```bash
-npm run dev
-```
-
-The site will be available at `http://localhost:4321/`
-
-### Building for Production
-
-Create a production build:
-```bash
-npm run build
-```
-
-Preview the production build locally:
-```bash
-npm run preview
-```
-
-## 📦 Project Structure
+## 🧱 Estructura principal
 
 ```text
-Web-Site-TCU/
-├── .nvmrc              # Node version specification for NVM
+src/
+├── components/
+│   ├── Footer.astro
+│   ├── IconGallery.astro
+│   ├── Navbar.astro
+│   └── SiteIcon.astro
+├── layouts/
+│   └── MainLayout.astro
+├── pages/
+│   ├── arquitectura.astro
+│   ├── index.astro
+│   ├── virgen-de-los-angeles.astro
+│   └── styleguide/icons.astro
+└── styles/
+	└── global.css
 
-├── package.json        # Project dependencies and scripts
-├── astro.config.mjs    # Astro configuration
-├── dist/               # Production build output (generated)
-├── node_modules/       # Dependencies (generated)
-├── public/             # Static assets
-│   └── favicon.svg
-├── src/                # Source code
-│   ├── assets/         # Images and other assets
-│   │   └── astro.svg
-│   ├── components/     # Reusable components
-│   │   └── Welcome.astro
-│   ├── layouts/        # Page layouts
-│   │   └── Layout.astro
-│   └── pages/          # Route pages
-│       └── index.astro
-└── README.md           # This file
+public/
+├── assets/ (imágenes de la Basílica)
+└── favicon.ico
 ```
 
+## 🛠️ Scripts disponibles
 
+| Comando | Descripción |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo con recarga rápida |
+| `npm run build` | Build optimizado listo para publicar |
+| `npm run preview` | Sirve el build localmente |
+| `npm run astro` | Acceso directo al CLI de Astro |
 
-## 🛠️ Available Scripts
+## 🧩 Stack y utilidades
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm run dev` | Start development server at `localhost:4321` |
-| `npm run build` | Build for production to `./dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run astro` | Run Astro CLI commands |
+- **Astro 5** como meta-framework estático.
+- **Tailwind CSS 4** (modo `@theme`) para la paleta oficial.
+- **astro-icon** + `@iconify-json/ph` para los iconos del sitio.
+- Estilos globales definidos en `src/styles/global.css` con las fuentes y colores institucionales.
 
-## 🔧 Configuration Files
+## 📚 Recursos útiles
 
-### `.nvmrc`
-Specifies Node.js version for NVM users. Run `nvm use` to switch to the correct version.
-
-
-
-### `package.json`
-Includes `engines` field specifying required Node.js and npm versions.
-
-## ⚡ Performance Optimizations
-
-This project is configured with:
-- Static asset caching (1 year cache for `/assets/*`)
-- Security headers (X-Frame-Options, CSP, etc.)
-- Optimized build output
-- Fast refresh in development
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Issue: Module not found errors**
-```bash
-# Clear cache and reinstall
-rm -rf node_modules package-lock.json
-npm cache clean --force
-npm install
-```
-
-**Issue: Wrong Node.js version**
-```bash
-# Check current version
-node --version
-
-# Switch using NVM
-nvm use 20.18.0
-```
-
-**Issue: Build fails on deployment**
-- Ensure Node.js version matches requirements (20.12.0+)
-- Check that all dependencies are listed in `package.json`
-- Verify build command in deployment settings
-
-## 📚 Resources
-
-- [Astro Documentation](https://docs.astro.build/)
-
-- [Node.js Documentation](https://nodejs.org/docs/)
-
-## 📄 License
-
-[Add your license information here]
-
-## 👥 Contributors
-
-[Add contributor information here]
+- [Documentación de Astro](https://docs.astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/docs)

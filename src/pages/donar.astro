@@ -1,0 +1,96 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout 
+  title="Donaciones" 
+  description="Apoye a la Basílica de Los Ángeles con su donación. Contribuya a la preservación del santuario y sus obras pastorales. Información sobre cuentas y SINPE Móvil."
+>
+
+<section class="max-w-4xl mx-auto px-4 py-12">
+
+  <!-- Título principal -->
+  <h1 class="text-4xl font-bold text-primary text-center mb-6">
+    Donaciones
+  </h1>
+
+  <p class="text-neutral-gray text-center max-w-2xl mx-auto mb-12">
+    Su contribución ayuda a preservar la Basílica de Los Ángeles, apoyar las obras pastorales y mantener vivo este lugar de fe y tradición. Gracias por su generosidad.
+  </p>
+
+  <!-- Métodos de Donación -->
+  <section class="space-y-10">
+
+    <!-- PayPal -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+      <h2 class="text-2xl font-semibold text-primary flex items-center gap-2 mb-3">
+        <Icon name="ph:credit-card-duotone" class="w-6 h-6 text-accent-gold" />
+        Donar con PayPal
+      </h2>
+      <p class="text-neutral-gray mb-4">
+        Realice una donación segura y rápida a través de PayPal.
+      </p>
+      <a
+        href="#"
+        class="inline-flex items-center gap-2 bg-accent-gold text-white px-6 py-3 rounded-full hover:bg-accent-gold/90 transition"
+      >
+        <Icon name="ph:paypal-logo-duotone" class="w-5 h-5" />
+        Donar con PayPal
+      </a>
+    </div>
+
+    <!-- SINPE Móvil -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+      <h2 class="text-2xl font-semibold text-primary flex items-center gap-2 mb-3">
+        <Icon name="ph:phone-call-duotone" class="w-6 h-6 text-accent-gold" />
+        SINPE Móvil
+      </h2>
+      <p class="text-neutral-gray mb-4">
+        Puede realizar su donación mediante SINPE Móvil al siguiente número:
+      </p>
+
+      <div class="bg-primary/5 border border-primary/20 rounded-lg p-4 inline-block">
+        <p class="text-primary font-semibold text-lg">+506 8888-8888</p>
+        <p class="text-neutral-gray text-sm">Nombre: Basílica de Los Ángeles</p>
+      </div>
+    </div>
+
+    <!-- Transferencia Bancaria -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+      <h2 class="text-2xl font-semibold text-primary flex items-center gap-2 mb-3">
+        <Icon name="ph:bank-duotone" class="w-6 h-6 text-accent-gold" />
+        Transferencia Bancaria
+      </h2>
+      <p class="text-neutral-gray mb-4">
+        También puede realizar una donación mediante transferencia bancaria.
+      </p>
+
+      <div class="space-y-2 bg-primary/5 border border-primary/20 rounded-lg p-4">
+        <p class="text-primary font-semibold">Banco Nacional de Costa Rica</p>
+        <p class="text-neutral-gray text-sm">Cuenta IBAN: CR00 0000 0000 0000 0000 00</p>
+        <p class="text-neutral-gray text-sm">Nombre: Basílica de Los Ángeles</p>
+      </div>
+    </div>
+
+    <!-- Donación Presencial -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+      <h2 class="text-2xl font-semibold text-primary flex items-center gap-2 mb-3">
+        <Icon name="ph:hand-heart-duotone" class="w-6 h-6 text-accent-gold" />
+        Donación Presencial
+      </h2>
+      <p class="text-neutral-gray mb-4">
+        Si desea realizar su donación en persona, puede visitar la Oficina Parroquial en horario regular.
+      </p>
+
+      <a href="/ubicacion" class="text-primary underline hover:text-primary-dark flex items-center gap-1">
+        Ver ubicación
+        <Icon name="ph:map-pin-duotone" class="w-4 h-4" />
+      </a>
+    </div>
+
+  </section>
+
+</section>
+
+</MainLayout>

@@ -1,0 +1,134 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const galleryImages = [
+	{ src: '/assets/virgen-fuera.jpeg', alt: 'La Virgen de los Ángeles en procesión' },
+	{ src: '/assets/virgen-guardada.jpg', alt: 'La Negrita en su altar' },
+	{ src: '/assets/virgen-desde-largo.jpg', alt: 'Vista de la imagen desde la Basílica' }
+];
+---
+
+<MainLayout 
+	title="Virgen de los Ángeles" 
+	description="Conozca la historia de La Negrita, Patrona de Costa Rica. El hallazgo, los milagros y la devoción a la Virgen de los Ángeles."
+>
+	<!-- Hero Superior -->
+	<section class="max-w-6xl mx-auto px-4 pt-16 pb-12">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<!-- Columna Izquierda -->
+			<div class="space-y-6">
+				<h1 class="font-sans font-bold text-4xl md:text-5xl text-primary leading-tight">
+					Nuestra Señora de los Ángeles
+				</h1>
+				<p class="text-neutral-gray text-lg leading-relaxed">
+					La Patrona de Costa Rica, un símbolo de fe y devoción que ha guiado 
+					al pueblo costarricense por casi cuatro siglos. Conocida cariñosamente 
+					como "La Negrita", su imagen representa esperanza, protección y el 
+					inquebrantable espíritu de una nación.
+				</p>
+			</div>
+
+			<!-- Columna Derecha - Imagen de la Virgen -->
+			<div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+				<img 
+					src="/assets/virgen-muy-cerca.png" 
+					alt="Imagen de la Virgen de los Ángeles, La Negrita"
+					class="w-full h-full object-cover"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección: Historia y Significado -->
+	<section class="max-w-5xl mx-auto px-4 py-10">
+		<h2 class="font-sans font-bold text-3xl text-primary mb-8">
+			Historia y Significado
+		</h2>
+		
+		<div class="space-y-6 text-neutral-gray leading-relaxed text-justify">
+			<p>
+				El 2 de agosto de 1635, una joven mulata llamada Juana Pereira encontró una pequeña 
+				imagen de piedra de la Virgen María sobre una roca en el bosque de Cartago. Al llevarla 
+				a su casa, la imagen desapareció misteriosamente, solo para reaparecer en el mismo lugar 
+				donde fue hallada. Este milagro se repitió varias veces, interpretándose como una señal 
+				divina de que la Virgen deseaba permanecer en aquel sitio sagrado.
+			</p>
+			
+			<p>
+				La imagen, de apenas 20 centímetros de altura, está tallada en una piedra volcánica de 
+				color oscuro, lo que le valió el nombre cariñoso de "La Negrita". Representa a la Virgen 
+				María sosteniendo al Niño Jesús, y su sencillez contrasta con la profunda devoción que 
+				ha inspirado en millones de fieles a lo largo de los siglos.
+			</p>
+			
+			<p>
+				En 1824, Nuestra Señora de los Ángeles fue declarada oficialmente Patrona de Costa Rica, 
+				consolidando su papel central en la identidad espiritual y cultural del país. La Basílica 
+				que hoy la alberga fue construida en su honor y se ha convertido en el principal centro 
+				de peregrinación de Centroamérica.
+			</p>
+		</div>
+	</section>
+
+	<!-- Sección: Cita Destacada -->
+	<section class="max-w-4xl mx-auto px-4 py-10">
+		<blockquote class="bg-accent-gold/10 border-l-4 border-accent-gold rounded-r-xl p-8">
+			<p class="font-serif text-xl md:text-2xl text-primary leading-relaxed italic mb-4">
+				"Con la inquebrantable fe en La Negrita, el pueblo de Costa Rica encuentra 
+				consuelo y guía en cada peregrinación."
+			</p>
+			<footer class="text-neutral-gray text-sm">
+				— <cite class="not-italic font-semibold">Arzobispo José Rafael Quirós Quirós</cite>
+			</footer>
+		</blockquote>
+	</section>
+
+	<!-- Sección: Festividades y Devoción Popular -->
+	<section class="max-w-5xl mx-auto px-4 py-10">
+		<h2 class="font-sans font-bold text-3xl text-primary mb-8">
+			Festividades y Devoción Popular
+		</h2>
+		
+		<div class="space-y-6 text-neutral-gray leading-relaxed text-justify">
+			<p>
+				Cada 2 de agosto, Costa Rica celebra el Día de la Virgen de los Ángeles, una festividad 
+				que transforma a Cartago en el epicentro de la fe nacional. La tradicional Romería atrae 
+				a más de dos millones de peregrinos que caminan desde todos los rincones del país, muchos 
+				recorriendo más de 20 kilómetros a pie como acto de devoción y agradecimiento.
+			</p>
+			
+			<p>
+				La "pasada" frente a la imagen de La Negrita es el momento culminante para cada peregrino. 
+				Con lágrimas en los ojos y oraciones en los labios, los fieles pasan junto al altar para 
+				agradecer favores recibidos o pedir protección para sus familias. Es una tradición que 
+				une a generaciones y fortalece los lazos comunitarios del pueblo costarricense.
+			</p>
+			
+			<p>
+				En la cripta de la Basílica, conocida como "La Piedra", se encuentra el lugar exacto donde 
+				apareció la imagen. Allí, los peregrinos dejan exvotos y milagritos —pequeñas figuras 
+				metálicas— como testimonio de los favores concedidos por la Virgen. Miles de estos objetos 
+				decoran las paredes, cada uno con una historia de fe y esperanza.
+			</p>
+		</div>
+	</section>
+
+	<!-- Galería: Momentos de Devoción y Fe -->
+	<section class="max-w-6xl mx-auto px-4 py-16">
+		<h2 class="font-sans font-bold text-3xl text-primary text-center mb-12">
+			Momentos de Devoción y Fe
+		</h2>
+		
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			{galleryImages.map((image) => (
+				<div class="aspect-[4/3] rounded-xl overflow-hidden shadow-md">
+					<img 
+						src={image.src} 
+						alt={image.alt}
+						class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+					/>
+				</div>
+			))}
+		</div>
+	</section>
+</MainLayout>

@@ -1,0 +1,120 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SiteIcon from '../components/SiteIcon.astro';
+---
+
+<MainLayout 
+  title="Contacto" 
+  description="Contáctenos para consultas sobre horarios de misas, confesiones, visitas guiadas y otros servicios de la Basílica de Nuestra Señora de los Ángeles."
+>
+  <main class="bg-white pb-20">
+    <!-- Hero -->
+    <section class="max-w-4xl mx-auto px-4 pt-16 pb-10 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-primary">Contáctenos</h1>
+      <p class="mt-3 text-sm md:text-base text-slate-600">
+        Nos encantaría escuchar de usted. Complete el formulario a continuación o utilice
+        nuestras vías de contacto directo y redes sociales.
+      </p>
+    </section>
+
+    <!-- Formulario y datos de contacto -->
+    <section class="max-w-6xl mx-auto px-4">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
+        <!-- Formulario -->
+        <form class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 space-y-4 hover:shadow-md transition-shadow duration-300">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-primary">Nombre Completo</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Su nombre"
+              required
+              autocomplete="name"
+              class="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-slate-300"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-primary">Correo Electrónico</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="correo@ejemplo.com"
+              required
+              autocomplete="email"
+              class="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-slate-300"
+            />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-primary">Teléfono</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+506 2222-0000"
+              autocomplete="tel"
+              class="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-slate-300"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold text-primary">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              placeholder="Escriba su mensaje aquí..."
+              required
+              class="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 hover:border-slate-300 resize-y min-h-[120px]"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white hover:bg-primaryDark transition-all duration-300 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none"
+          >
+            Enviar Mensaje
+          </button>
+        </form>
+
+        <!-- Información de contacto -->
+        <div class="space-y-6">
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h2 class="text-lg font-semibold text-primary">Encuéntrenos Aquí</h2>
+            <address class="mt-4 space-y-3 text-sm text-slate-700 not-italic">
+              <div class="flex items-start gap-3">
+                <SiteIcon name="ph:map-pin-duotone" variant="circle-gold" sizeClass="w-7 h-7" class="mt-[2px] flex-shrink-0" />
+                <p>Avenida Central 1, Cartago, Costa Rica</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <SiteIcon name="ph:phone-call-duotone" variant="circle-gold" sizeClass="w-7 h-7" class="flex-shrink-0" />
+                <a href="tel:+506-2550-0000" class="hover:text-primary transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none rounded">+506-2550-0000</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <SiteIcon name="ph:envelope-duotone" variant="circle-gold" sizeClass="w-7 h-7" class="flex-shrink-0" />
+                <a href="mailto:info@basilica.cr" class="hover:text-primary transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none rounded">info@basilica.cr</a>
+              </div>
+            </address>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <h2 class="text-lg font-semibold text-primary">Síganos en Redes Sociales</h2>
+            <div class="mt-4 flex items-center gap-3 text-primary">
+              <a href="https://facebook.com" class="p-2 rounded-full hover:bg-primary/10 transition-all duration-200 hover:scale-110 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none" aria-label="Facebook">
+                <SiteIcon name="ph:facebook-logo-duotone" variant="plain" sizeClass="w-6 h-6" />
+              </a>
+              <a href="https://instagram.com" class="p-2 rounded-full hover:bg-primary/10 transition-all duration-200 hover:scale-110 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none" aria-label="Instagram">
+                <SiteIcon name="ph:instagram-logo-duotone" variant="plain" sizeClass="w-6 h-6" />
+              </a>
+              <a href="https://youtube.com" class="p-2 rounded-full hover:bg-primary/10 transition-all duration-200 hover:scale-110 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none" aria-label="YouTube">
+                <SiteIcon name="ph:youtube-logo-duotone" variant="plain" sizeClass="w-6 h-6" />
+              </a>
+              <a href="https://tiktok.com" class="p-2 rounded-full hover:bg-primary/10 transition-all duration-200 hover:scale-110 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none" aria-label="TikTok">
+                <SiteIcon name="ph:tiktok-logo-duotone" variant="plain" sizeClass="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
