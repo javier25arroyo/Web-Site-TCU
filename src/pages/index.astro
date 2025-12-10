@@ -3,7 +3,10 @@ import MainLayout from '../layouts/MainLayout.astro';
 import SiteIcon from '../components/SiteIcon.astro';
 ---
 
-<MainLayout title="Inicio">
+<MainLayout 
+  title="Inicio"
+  description="Bienvenido al sitio oficial de la Basílica de Nuestra Señora de los Ángeles en Cartago, Costa Rica. Conozca la historia de La Negrita, horarios de misas y guía para peregrinos."
+>
 	<!-- Hero Principal -->
 	<section class="max-w-6xl mx-auto px-4 py-16">
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -20,13 +23,13 @@ import SiteIcon from '../components/SiteIcon.astro';
 				<div class="flex flex-wrap gap-4">
 					<a 
 						href="/arquitectura" 
-						class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+						class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none"
 					>
 						Explorar
 					</a>
 					<a 
 						href="/horarios" 
-						class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+						class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none"
 					>
 						Planear Visita
 					</a>
@@ -34,11 +37,15 @@ import SiteIcon from '../components/SiteIcon.astro';
 			</div>
 
 			<!-- Columna Derecha - Imagen de la Basílica -->
-			<div class="rounded-2xl aspect-video overflow-hidden shadow-lg">
+			<div class="rounded-2xl aspect-video overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
 				<img 
 					src="/assets/fachada.jpg" 
 					alt="Fachada de la Basílica de Nuestra Señora de los Ángeles" 
-					class="w-full h-full object-cover"
+					width="1280"
+					height="720"
+					class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+					loading="eager"
+					decoding="async"
 				/>
 			</div>
 		</div>
@@ -57,7 +64,7 @@ import SiteIcon from '../components/SiteIcon.astro';
 			</p>
 			<a 
 				href="/arquitectura" 
-				class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+				class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none"
 			>
 				Conocer la Basílica
 			</a>
@@ -72,12 +79,12 @@ import SiteIcon from '../components/SiteIcon.astro';
 		
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<!-- Tarjeta 1: Nuestra Basílica -->
-			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow duration-200">
+			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
 				<SiteIcon
 					name="ph:book-open-text-duotone"
 					variant="circle-gold"
 					sizeClass="w-8 h-8"
-					class="mb-4"
+					class="mb-4 group-hover:scale-110 transition-transform duration-300"
 				/>
 				<h3 class="font-sans font-semibold text-xl text-primary mb-3">
 					Nuestra Basílica
@@ -87,19 +94,19 @@ import SiteIcon from '../components/SiteIcon.astro';
 				</p>
 				<a 
 					href="/arquitectura" 
-					class="text-accent-gold font-semibold text-sm hover:underline"
+					class="text-accent-gold font-semibold text-sm hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none rounded"
 				>
-					Ver detalles →
+					Ver detalles <span aria-hidden="true">→</span>
 				</a>
 			</article>
 
 			<!-- Tarjeta 2: Arquitectura impresionante -->
-			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow duration-200">
+			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
 				<SiteIcon
 					name="ph:columns-duotone"
 					variant="circle-blue"
 					sizeClass="w-8 h-8"
-					class="mb-4"
+					class="mb-4 group-hover:scale-110 transition-transform duration-300"
 				/>
 				<h3 class="font-sans font-semibold text-xl text-primary mb-3">
 					Arquitectura Impresionante
@@ -110,19 +117,19 @@ import SiteIcon from '../components/SiteIcon.astro';
 				</p>
 				<a 
 					href="/arquitectura" 
-					class="text-accent-gold font-semibold text-sm hover:underline"
+					class="text-accent-gold font-semibold text-sm hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none rounded"
 				>
-					Descubrir →
+					Descubrir <span aria-hidden="true">→</span>
 				</a>
 			</article>
 
 			<!-- Tarjeta 3: La Virgen de los Ángeles -->
-			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow duration-200">
+			<article class="bg-white shadow-sm rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
 				<SiteIcon
 					name="ph:hand-heart-duotone"
 					variant="circle-gold"
 					sizeClass="w-8 h-8"
-					class="mb-4"
+					class="mb-4 group-hover:scale-110 transition-transform duration-300"
 				/>
 				<h3 class="font-sans font-semibold text-xl text-primary mb-3">
 					La Virgen de los Ángeles
@@ -133,9 +140,9 @@ import SiteIcon from '../components/SiteIcon.astro';
 				</p>
 				<a 
 					href="/virgen-de-los-angeles" 
-					class="text-accent-gold font-semibold text-sm hover:underline"
+					class="text-accent-gold font-semibold text-sm hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:outline-none rounded"
 				>
-					Más información →
+					Más información <span aria-hidden="true">→</span>
 				</a>
 			</article>
 		</div>
@@ -153,7 +160,7 @@ import SiteIcon from '../components/SiteIcon.astro';
 			</p>
 			<a 
 				href="/peregrinacion" 
-				class="inline-block bg-accent-gold hover:bg-accent-gold/90 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-md"
+				class="inline-block bg-accent-gold hover:bg-accent-gold/90 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
 			>
 				Empieza Tu Viaje
 			</a>
