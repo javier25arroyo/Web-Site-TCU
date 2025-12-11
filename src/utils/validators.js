@@ -58,7 +58,7 @@ export function validatePhone(phone) {
     return { isValid: true, error: null };
   }
 
-  const cleanPhone = phone.replace(/[\s\-\(\)\.]/g, '');
+  const cleanPhone = phone.replace(/[\s().-]/g, '');
   const phoneRegex = /^(\+506)?[2-8]\d{7}$/;
   
   if (!phoneRegex.test(cleanPhone)) {
