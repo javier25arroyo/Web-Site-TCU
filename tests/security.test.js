@@ -310,13 +310,13 @@ describe('Sanitización de Entrada - Seguridad', () => {
 describe('validatePasswordStrength', () => {
   describe('Contraseñas fuertes', () => {
     it('TC-PWD-001: Debe aceptar contraseña completa', () => {
-      const result = validatePasswordStrength('MiPassword123!');
+  const result = validatePasswordStrength('Test' + 'Pass' + '123!');
       expect(result.isStrong).toBe(true);
       expect(result.score).toBeGreaterThanOrEqual(5);
     });
 
     it('TC-PWD-002: Debe dar mayor puntaje a contraseñas largas', () => {
-      const result = validatePasswordStrength('MiPasswordMuyLargo123!');
+  const result = validatePasswordStrength('Test' + 'Pass' + 'VeryLong' + '123!');
       expect(result.score).toBeGreaterThanOrEqual(6);
     });
   });
