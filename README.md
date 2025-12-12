@@ -1,6 +1,14 @@
 # Web Site TCU
 
-A modern web application built with Astro framework, optimized for performance.
+A modern, high-performance website built with the Astro framework and styled with Tailwind CSS. This project is designed for TCU (Trabajo Comunal Universitario - University Community Work), providing a fast, accessible, and responsive web experience.
+
+## ✨ Features
+
+- ⚡ Built with [Astro](https://astro.build/) for optimal performance
+- 🎨 Styled with [Tailwind CSS v4](https://tailwindcss.com/) for modern, utility-first styling
+- 📱 Fully responsive design
+- 🚀 Optimized for speed and SEO
+- ♿ Accessible by design
 
 ## 📋 Prerequisites
 
