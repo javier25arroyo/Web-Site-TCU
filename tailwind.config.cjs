@@ -8,8 +8,8 @@ module.exports = {
         // Paleta oficial Basílica de Los Ángeles
         primary: '#1F2A44',        // Azul principal
         primaryDark: '#2F3D6E',    // Azul secundario
-        'accent-gold': '#936626',  // Dorado acento
-        neutralGray: '#727F84',    // Gris medio
+        accentGold: '#936626',     // Dorado acento
+        'neutral-gray': '#727F84',    // Gris medio
         background: '#F5F5F7',     // Fondo claro
         white: '#FFFFFF',
         black: '#000000',
