@@ -1,0 +1,97 @@
+---
+import SiteIcon from "./SiteIcon.astro";
+
+type IconItem = {
+  id: string;
+  label: string;
+  category: string;
+  variant?: "circle-gold" | "circle-blue" | "plain";
+};
+
+const icons: IconItem[] = [
+  {
+    id: "ph:church-duotone",
+    label: "Basílica / templo",
+    category: "Identidad",
+    variant: "circle-blue",
+  },
+  {
+    id: "ph:columns-duotone",
+    label: "Arquitectura",
+    category: "Arquitectura",
+    variant: "circle-blue",
+  },
+  {
+    id: "ph:map-pin-fill",
+    label: "Cómo llegar / ubicación",
+    category: "Visita",
+    variant: "circle-gold",
+  },
+  {
+    id: "ph:users-three-bold",
+    label: "Peregrinos / comunidad",
+    category: "Personas",
+    variant: "circle-blue",
+  },
+  {
+    id: "ph:clock-afternoon-duotone",
+    label: "Horarios y servicios",
+    category: "Servicios",
+    variant: "circle-gold",
+  },
+  {
+    id: "ph:camera-duotone",
+    label: "Galería multimedia",
+    category: "Multimedia",
+    variant: "circle-blue",
+  },
+  {
+    id: "ph:hand-heart-duotone",
+    label: "Donaciones",
+    category: "Acciones",
+    variant: "circle-gold",
+  },
+];
+---
+
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <header class="mb-8">
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-2">
+      Galería de iconos – Basílica
+    </h1>
+    <p class="text-sm text-neutral-gray">
+      Iconos basados en el set <strong>Phosphor</strong>, usando la paleta
+      de color corporativa (azul y dorado). Úsalos en tarjetas, botones,
+      secciones del menú y llamadas a la acción.
+    </p>
+  </header>
+
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {icons.map((icon) => (
+      <article
+        class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 flex flex-col gap-3"
+      >
+        <SiteIcon
+          name={icon.id}
+          variant={icon.variant ?? "plain"}
+          sizeClass="w-8 h-8"
+        />
+
+        <div>
+          <h2 class="text-sm font-semibold text-primary">
+            {icon.label}
+          </h2>
+          <p class="text-xs text-neutral-gray mt-1">
+            ID: <code class="text-[11px] bg-slate-100 px-1 py-0.5 rounded">
+              {icon.id}
+            </code>
+          </p>
+        </div>
+
+        <span class="mt-auto inline-flex text-[11px] uppercase tracking-wide text-neutral-gray/80">
+          {icon.category}
+        </span>
+      </article>
+    ))}
+  </div>
+</section>

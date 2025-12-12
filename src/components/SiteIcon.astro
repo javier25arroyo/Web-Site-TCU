@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  /** ID del icono, p.ej. "ph:church-duotone" */
+  name: string;
+  /** Variante visual para el fondo */
+  variant?: "circle-gold" | "circle-blue" | "plain";
+  /** Tamaño en Tailwind (w-8 h-8, w-10 h-10, etc.) */
+  sizeClass?: string;
+} & HTMLAttributes<"div">;
+
+const {
+  name,
+  variant = "plain",
+  sizeClass = "w-8 h-8",
+  ...rest
+} = Astro.props;
+
+const baseCircle =
+  "inline-flex items-center justify-center rounded-full shadow-sm";
+
+const variants: Record<string, string> = {
+  plain: "",
+  "circle-gold": `${baseCircle} bg-accent-gold/15 text-accent-gold`,
+  "circle-blue": `${baseCircle} bg-primary/10 text-primary`,
+};
+---
+
+<div class={variants[variant]} {...rest}>
+  <Icon name={name} class={`inline-block ${sizeClass}`} />
+</div>
