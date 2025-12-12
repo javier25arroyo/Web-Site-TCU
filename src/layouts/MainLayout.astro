@@ -18,6 +18,8 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const absoluteImageURL = new URL(image, Astro.site);
+const siteURL = new URL(Astro.site);
 
 const schema = {
   "@context": "https://schema.org",
@@ -60,17 +62,20 @@ const schema = {
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Basílica de Los Ángeles" />
+    <meta property="og:locale" content="es_CR" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={absoluteImageURL} />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content={siteURL.hostname} />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImageURL} />
     
     <!-- Theme -->
     <meta name="theme-color" content="#1F2A44" />

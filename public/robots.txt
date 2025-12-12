@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://basilicadelosangeles.cr/sitemap-index.xml
